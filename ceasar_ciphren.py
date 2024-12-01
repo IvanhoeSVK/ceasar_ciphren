@@ -7,7 +7,13 @@ decode_word = ""
 
 def encode():
     global encode_word
-    word = (input("Enter the word you want to encode: ")).lower().strip()
+    while True:
+        word = (input("Enter the word you want to encode: ")).lower().strip()
+        if word.isalpha():
+            break
+        else:
+            print("Enter only letters from alphabet!\n")
+            continue
     while True:
         shift = input("Enter shift: ")
         if shift.isdigit():
@@ -25,7 +31,12 @@ def encode():
 
 def decode():
     global decode_word
-    word = input("Enter word you want to decode: ").lower().strip()
+    while True:
+        word = input("Enter word you want to decode: ").lower().strip()
+        if word.isalpha():
+            break
+        else:
+            print("Enter only letters from alphabet!\n")
     while True:
         shift = input("Enter shift: ")
         if shift.isdigit():
