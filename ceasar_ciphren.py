@@ -2,11 +2,9 @@ import sys
 import string
 
 alphabet = list(string.ascii_lowercase)
-encode_word = ""
-decode_word = ""
 
 def encode():
-    global encode_word
+    encode_word = ""
     while True:
         word = (input("Enter the word you want to encode: ")).lower().strip()
         if word.isalpha():
@@ -23,14 +21,14 @@ def encode():
             continue
     for letter in word:
         letter_index = alphabet.index(letter)
-        new_index = letter_index + int(shift)
-        if new_index >= 26:
-            new_index %= 26
+        new_index = (letter_index + int(shift)) % 26
+        # if new_index >= 26:
+        #     new_index %= 26
         encode_word += alphabet[new_index]
     print(f"Encode word is: {encode_word}\n")
 
 def decode():
-    global decode_word
+    decode_word = ""
     while True:
         word = input("Enter word you want to decode: ").lower().strip()
         if word.isalpha():
@@ -46,9 +44,9 @@ def decode():
             continue
     for letter in word:
         letter_index = alphabet.index(letter)
-        new_index = letter_index - int(shift)
-        if new_index >= 26:
-            new_index %= 26
+        new_index = (letter_index - int(shift)) % 26
+        # if new_index >= 26:
+        #     new_index %= 26
         decode_word += alphabet[new_index]
     print(f"Decode word is : {decode_word}\n")
     
