@@ -59,6 +59,16 @@ while True:
         else:
             print("Enter only 1 or 2!")
             continue
-
+    while True:
+        end = (input("Do you want to continue? y/n ")).lower().strip()
+        if end in ["y", "n"]:
+            if end == "y":
+                break
+            else:
+                print("Exiting program Ceasar Ciphren... ")
+                sys.exit()
+        else:
+            print("Enter only y or n!\n")
+            continue
 
     
